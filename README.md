@@ -131,7 +131,7 @@ data_augmentation_options {
 ```
 ## 4 Models
 
-The ```.configs``` included concert object detector that output boxes and masks (no keypoints).
+The ```.configs``` included concert object detectors that output boxes and masks (no keypoints). One can download the pre-trained weights from the links below and use the ```.configs``` provided in this repository. The downloadable content includes ```.config``` pipelines. However, **all** of the inluded pipelines are same with the ones in here, with the **exception** of the SSD (EfficientDet included). For the Faster R-CNN, Mask R-CNN, and CenterNet, the ```.config``` are a total match.
 
 Model name                                                                                                                                                                  | Speed (ms) | COCO mAP | Outputs
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------: | :----------: | :-----:

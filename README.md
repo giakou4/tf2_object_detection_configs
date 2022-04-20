@@ -4,23 +4,23 @@ Repository of ```.configs``` for the [TensorFlow Object Detection API](https://g
 
 The repository aims on having the initial configuration, which lies at [here](https://github.com/tensorflow/models/tree/master/research/object_detection/configs/tf2). In addition, another ```.config``` file with the suffix ```_no_augmentation.config``` exist where all the augmentation is removed. This is done due to the fact that [Roboflow](https://roboflow.com/) includes augmentation is the ```.tfrecord``` file generated from the original dataset. However, all the augmentation options are included in the ```augmentations_all.config``` where one can manually add them in the ```.config``` file. Moreover, ```optimizers_all.config``` includes ADAM and Momentum optimizers where one can manually override in the ```.config``` file.
 
-## Notes
+## 1 Notes
 
-### Faster R-CNN
+### 1.1 Faster R-CNN
 All Faster R-CNN make use of the ```momentum_optimizer``` with ```cosine_decay_learning_rate```. Augmentation includes ```random_horizontal_flip```, ```random_adjust_hue```, ```random_adjust_contrast```, ```random_adjust_saturation```, and ```random_square_crop_by_scale```.
 
-### CenterNet (Hourglass)
+### 1.2 CenterNet (Hourglass)
 All CenterNet make use of the ```adam_optimizer``` with ```manual_step_learning_rate```. Augmentation includes ```random_horizontal_flip```, ```random_crop_image```, ```random_adjust_hue```, ```random_adjust_contrast```, ```random_adjust_saturation```, ```random_adjust_brightness```, and ```random_absolute_pad_image```.
 
-### EfficientDet
+### 1.3 EfficientDet
 All EfficientDet make use of the ```momentum_optimizer``` with ```cosine_decay_learning_rate```. Augmentation include ```random_horizontal_flip```, and ```random_scale_crop_and_pad_to_square```.
 
-### SSD
+### 1.4 SSD
 All SSD (exluded EfficientDet) make use of the ```momentum_optimizer``` with ```cosine_decay_learning_rate```. Augmentation includes random_horizontal_flip, random_crop_image, ssd_random_crop, 
 
-## Optimizers
+## 2 Optimizers
 
-### ADAM with Manual Step
+### 2.1 ADAM with Manual Step
 ```
  optimizer {
     adam_optimizer: {
@@ -40,7 +40,7 @@ All SSD (exluded EfficientDet) make use of the ```momentum_optimizer``` with ```
       }
 ```
 
-### ADAM with Cosine Decay
+### 2.2 ADAM with Cosine Decay
 ```
   optimizer {
     adam_optimizer: {
@@ -57,7 +57,7 @@ All SSD (exluded EfficientDet) make use of the ```momentum_optimizer``` with ```
     use_moving_average: false
   }
 ```
-# Momentum with Cosine Decay
+# 2.3 Momentum with Cosine Decay
 ```
 optimizer {
     momentum_optimizer: {
@@ -74,7 +74,7 @@ optimizer {
     use_moving_average: false
   }
 ```
-## Augemtations
+## 3 Augemtations
 ```
 data_augmentation_options {
     random_horizontal_flip {

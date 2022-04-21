@@ -20,6 +20,8 @@ All SSD (exluded EfficientDet) make use of the ```momentum_optimizer``` with ```
 
 ## 2 Optimizers
 
+More options availiable at [TF2 Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/protos/optimizer.proto)
+
 ### 2.1 ADAM with Manual Step
 ```
  optimizer {
@@ -75,6 +77,10 @@ optimizer {
   }
 ```
 ## 3 Augemtations
+
+More options availiable at [TF2 Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/protos/preprocessor.proto)
+
+
 ```
 data_augmentation_options {
     random_horizontal_flip {

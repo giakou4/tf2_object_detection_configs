@@ -59,7 +59,7 @@ More options availiable at [TF2 Object Detection API](https://github.com/tensorf
     use_moving_average: false
   }
 ```
-# 2.3 Momentum with Cosine Decay
+### 2.3 Momentum with Cosine Decay
 ```
 optimizer {
     momentum_optimizer: {

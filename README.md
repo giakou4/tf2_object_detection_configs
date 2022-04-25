@@ -135,7 +135,20 @@ data_augmentation_options {
     }
   }
 ```
-## 4 Models
+
+## 4 Metrics
+
+To use mean average precision and recall, you should configure your ```pipeline.config``` file. The metrics_set parameter in the ```eval_config``` block should be set to ```"coco_detection_metrics"```.
+```
+eval_config: {
+ metrics_set: "coco_detection_metrics"
+ use_moving_averages: false
+ batcH_size: 1;
+}
+```
+Other options incude ```"pascal_voc_detection_metrics"``` and ```"oid_challenge_detection_metrics"```
+
+## 5 Models
 
 The ```.configs``` included concern object detectors that output boxes and masks (no keypoints). One can download the pre-trained weights from the links below and use the ```.configs``` provided in this repository. The downloadable content includes ```.config``` pipelines. However, **all** of the inluded pipelines are same with the ones in here, with the **exception** of the SSD (EfficientDet included). For the Faster R-CNN, Mask R-CNN, and CenterNet, the ```.config``` are a total match.
 
